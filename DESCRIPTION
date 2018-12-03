@@ -1,11 +1,18 @@
 Package: elp
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Edit ellipsis (...) easily
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Rentaro", "Futagami", ,"futagamirentaro@gmail.com",c("aut","cre"))
+Description: Ellipsis is used in for example the plot function frequently
+    to provide flexible visualization.
+    When we implement the plot function as the S3 generic method,
+    we want to set the default value such as `xlab` or `title`
+    to the ellipsis in some cases.
+    Then, to implement proces for rejecting or accepting
+    the user's specific value instead of default is takes time and effort.
+    This package makes the process easily.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
