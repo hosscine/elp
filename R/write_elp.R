@@ -29,14 +29,17 @@ write_elp <- function(..., append, warn, soft) {
   }
 
   if (warn && TRUE %in% conflict.flags){
+    pcall <- utils::capture.output(print(sys.calls()[[sys.nframe() - 7]]))
     if (soft)
-      warning("arguments ",
+      warning("In ", pcall, " :\n",
+        "  arguments ",
               paste(unique.names[conflict.flags], "", collapse = "and "),
-              "conflicted with default values")
+              "conflicted with default values", call. = FALSE)
     else
-      warning("arguments ",
+      warning("In ", pcall, " : \n",
+        "  arguments ",
               paste(unique.names[conflict.flags], "", collapse = "and "),
-              "is rejected")
+              "is rejected", call. = FALSE)
   }
 
   return(elp[elp.use.index])
