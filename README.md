@@ -15,7 +15,7 @@ devtools::install_github("hosscine/elp")
 
 ## Usage
 
-Now, suppose that we want to customized plot function like below:
+Now, suppose that we want customized plot function like below:
 - `xlim = c(0, 2 * pi)`
 - `xlab = "phase"` (as default)
 - `col = "red"` (as default).
@@ -26,7 +26,7 @@ Now, suppose that we want to customized plot function like below:
 plot2pi_bad <- function(x, ...) {
   elp <- list(...)
   elp$x <- x
-  elp$xlim <- c(0, 2*pi)
+  elp$xlim <- c(0, 2 * pi)
   if (is.null(elp$xlab)) elp$phase <- "phase"
   if (is.null(elp$col)) elp$col <- "red"
   do.call(plot, elp)
